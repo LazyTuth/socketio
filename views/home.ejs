@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <h1>Hello world!</h1>
+    </body>
+
+    <script>
+        var socket = io();
+        //var socket = io('/my-namespace');//custom namespace
+
+        //socket.on('testEvent', function(data){document.write(data.description)});
+        //socket.emit('clientEvent', 'Event from Client');//send event from client
+        // socket.on('broadcast', (data) => {
+        //     document.body.innerHTML = '';
+		// 	document.write(data.description);
+        // });
+
+        // socket.on('customnamespace', (data) => {
+        //     document.body.innerHTML = '';
+        //     document.write(data.description);
+        // });
+
+        socket.on('helloinroom', (data) => {
+            document.body.innerHTML = '';
+            document.write(data.description);
+        });
+
+    </script>
+</html>
